@@ -1,7 +1,7 @@
 """
 client.py - terminal chat client.
 
-Flow:  you type -> encrypt -> send to server -> server relays ->
+Process:  you type -> encrypt -> send to server -> server relays ->
        other clients receive -> decrypt -> display
 """
 import socket
@@ -14,7 +14,7 @@ PORT = 5000
 
 def receive_loop(sock: socket.socket, cipher) -> None:
     """Runs in a background thread so incoming messages appear while you type."""
-    reader = sock.makefile("r", encoding="utf-8")
+    reader = sock.makefile("r", encoding="utf-8") #utf is Unicode Transformation Format
     try:
         for line in reader:
             line = line.strip()
