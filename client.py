@@ -1,8 +1,6 @@
 """
 client.py - terminal chat client.
 
-Process:  you type -> encrypt -> send to server -> server relays ->
-       other clients receive -> decrypt -> display
 """
 import socket
 import threading
